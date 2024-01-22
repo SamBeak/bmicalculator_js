@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./bmi.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -16,14 +18,12 @@
                     <ul class="calc__list">
                         <li class="calc__item">
                             <label for="height">키</label>
-                            <input type="text" id="height" placeholder="키를 입력하세요.">
-                            <span>
-                                cm
-                            </span>
+                            <input type="text" id="height" autocomplete="off">
+                            <span>cm</span>
                         </li>
                         <li class="calc__item">
                             <label for="weight">몸무게</label>
-                            <input type="text" id="weight" placeholder="몸무게를 입력하세요.">
+                            <input type="text" id="weight" autocomplete="off">
                             <span>kg</span>
                         </li>
                         <li class="calc__item">
@@ -31,12 +31,28 @@
                         </li>
                     </ul>
                     <div class="result">
-                        <p>BMI 지수</p>
+                        <p>BMI 지수 : </p>
                         <p id="result"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <table>
+        <tr>
+			<td class="SubTitle">구분</td>
+			<td class="Content" style="min-width:230px;">시작</td>
+			<td class="Content" style="min-width:230px;">종료</td>
+		</tr>
+		<tr>
+			<td class="SubTitle">인쇄구분</td>
+			<td class="Content" colspan="">
+				<input type=radio name=hgbn id="siteHgbn" <% if(phgbn.equals("0")){%> checked <%}%> value=0 onClick="javascript:fn_Search();"><label for="siteHgbn">현장-업체별</label>
+	  	    	<input type=radio name=hgbn id="itemHgbn" <% if(phgbn.equals("1")){%> checked <%}%> value=1 onClick="javascript:fn_Search();"><label for="itemHgbn">현장-품목별</label>
+	  	    	<input type=radio name=hgbn id="custHgbn" <% if(phgbn.equals("2")){%> checked <%}%> value=2 onClick="javascript:fn_Search();"><label for="custHgbn">현장-업체-품목별</label>
+			</td>
+		</tr>
+    </table>
 </body>
 </html>
