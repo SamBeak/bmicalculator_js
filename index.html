@@ -17,17 +17,23 @@
                 <div class="content">
                     <ul class="calc__list">
                         <li class="calc__item">
-                            <label for="height">키</label>
-                            <input type="text" id="height" autocomplete="off">
-                            <span>cm</span>
+                            <div class="heigth__box">
+                                <label for="height">키</label>
+                                <input type="text" id="height" autocomplete="off" min="60" max="220" oninput="onInputChange(event)">
+                                <span>cm</span>
+                            </div>
+                            <input type="range" name="rangeHeight" id="rangeHeight" min="60" max="220" value="100" onchange="onChangeRange(event)">
                         </li>
                         <li class="calc__item">
-                            <label for="weight">몸무게</label>
-                            <input type="text" id="weight" autocomplete="off">
-                            <span>kg</span>
+                            <div class="weight__box">
+                                <label for="weight">몸무게</label>
+                                <input type="text" id="weight" autocomplete="off" min="25" max="180" oninput="onInputChange(event)">
+                                <span>kg</span>
+                            </div>
+                            <input type="range" name="rangeWeight" id="rangeWeight" min="25" max="180" value="60" onchange="onChangeRange(event)">
                         </li>
                         <li class="calc__item">
-                            <button type="button" id="calc">계산하기</button>
+                            <button type="button" id="calc" onclick="onClickBtn(event)">계산하기</button>
                         </li>
                     </ul>
                     <div class="result">
@@ -38,21 +44,5 @@
             </div>
         </div>
     </div>
-
-    <table>
-        <tr>
-			<td class="SubTitle">구분</td>
-			<td class="Content" style="min-width:230px;">시작</td>
-			<td class="Content" style="min-width:230px;">종료</td>
-		</tr>
-		<tr>
-			<td class="SubTitle">인쇄구분</td>
-			<td class="Content" colspan="">
-				<input type=radio name=hgbn id="siteHgbn" <% if(phgbn.equals("0")){%> checked <%}%> value=0 onClick="javascript:fn_Search();"><label for="siteHgbn">현장-업체별</label>
-	  	    	<input type=radio name=hgbn id="itemHgbn" <% if(phgbn.equals("1")){%> checked <%}%> value=1 onClick="javascript:fn_Search();"><label for="itemHgbn">현장-품목별</label>
-	  	    	<input type=radio name=hgbn id="custHgbn" <% if(phgbn.equals("2")){%> checked <%}%> value=2 onClick="javascript:fn_Search();"><label for="custHgbn">현장-업체-품목별</label>
-			</td>
-		</tr>
-    </table>
 </body>
 </html>
